@@ -11,12 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\JaimeEngine\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\JaimeEngine\Events\Event.h" />
+    <ClInclude Include="src\JaimeEngine\Events\KeyEvent.h" />
+    <ClInclude Include="src\JaimeEngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\JaimeEngine\Log.h" />
     <ClInclude Include="src\JaimeEngine.h" />
     <ClInclude Include="src\JaimeEngine\Application.h" />
     <ClInclude Include="src\JaimeEngine\Core.h" />
     <ClInclude Include="src\JaimeEngine\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\JaimeEngine\Log.cpp" />
     <ClCompile Include="src\JaimeEngine\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -66,7 +72,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>JE_PLATFORM_WINDOWS;JE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)JaimeEngine\vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)JaimeEngine\vendor\spdlog\include; $(SolutionDir)JaimeEngine\src</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -81,7 +88,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>JE_PLATFORM_WINDOWS;JE_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)JaimeEngine\vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)JaimeEngine\vendor\spdlog\include; $(SolutionDir)JaimeEngine\src</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

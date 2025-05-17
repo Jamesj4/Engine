@@ -10,3 +10,5 @@
 #else
 	#error JAIME ENGINE ONLY SUPPOR WINDOWS!
 #endif
+
+#define BIT(x) (1 << x) 
