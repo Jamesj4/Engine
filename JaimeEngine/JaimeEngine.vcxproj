@@ -163,6 +163,8 @@
     <ClInclude Include="src\JaimeEngine\Events\Event.h" />
     <ClInclude Include="src\JaimeEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\JaimeEngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\JaimeEngine\Layer.h" />
+    <ClInclude Include="src\JaimeEngine\LayerStack.h" />
     <ClInclude Include="src\JaimeEngine\Log.h" />
     <ClInclude Include="src\JaimeEngine\Window.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -170,6 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\JaimeEngine\Application.cpp" />
+    <ClCompile Include="src\JaimeEngine\Layer.cpp" />
+    <ClCompile Include="src\JaimeEngine\LayerStack.cpp" />
     <ClCompile Include="src\JaimeEngine\Log.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\jepch.cpp">

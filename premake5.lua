@@ -89,7 +89,7 @@ workspace "JaimeEngine"
 		kind "ConsoleApp"
 		language "C++"
 		toolset "v143"
-		staticruntime "off"
+		
 		buildoptions { "/utf-8" }
 
 		targetdir ("bin/" ..outputdir.. "/%{prj.name}")
@@ -109,7 +109,7 @@ workspace "JaimeEngine"
 
 		filter "system:windows"
 			cppdialect "C++17"
-			staticruntime "On"
+			
 			systemversion "latest"
 
 			defines

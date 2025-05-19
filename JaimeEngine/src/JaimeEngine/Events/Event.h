@@ -35,9 +35,12 @@ namespace JaimeEngine {
 #define EVENT_CLASS_CATEGORY(category) \
     virtual int GetCategoryFlags() const override { return category; }
 
-	class JE_API Event
+	class Event
 	{
 	public:
+		virtual ~Event() = default;
+		bool m_Handled = false;
+
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
@@ -48,8 +51,7 @@ namespace JaimeEngine {
 			return GetCategoryFlags() & category; //  1 = At least in this category
 		}
 
-	protected:
-		bool m_Handled = false;
+		
 	};
 
 
@@ -79,4 +81,7 @@ namespace JaimeEngine {
 	private:
 		Event& m_Event;
 	};
+
+
+
 }

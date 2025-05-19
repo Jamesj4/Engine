@@ -24,6 +24,7 @@ namespace JaimeEngine
 	private:
 
 		virtual void Init(const WindowProps& props);
+		void SetGLFWCallbacks();
 		virtual void Shutdown();
 
 		GLFWwindow* m_Window;
@@ -38,6 +39,8 @@ namespace JaimeEngine
 		};
 
 		WindowData m_Data;
+
+	
 	};
 
 

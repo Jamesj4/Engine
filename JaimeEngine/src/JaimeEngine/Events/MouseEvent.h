@@ -99,11 +99,11 @@ namespace JaimeEngine
 	};
 
 
-	class JE_API MouseButtonPressedReleased: public MouseButtonEvent
+	class JE_API MouseButtonReleasedEvent: public MouseButtonEvent
 	{
 
 	public:
-		MouseButtonPressedReleased(int button)
+		MouseButtonReleasedEvent(int button)
 			:MouseButtonEvent(button)
 		{
 		}

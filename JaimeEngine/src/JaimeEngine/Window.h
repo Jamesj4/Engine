@@ -1,9 +1,7 @@
 #pragma once
 #include "jepch.h"
 #include "Core.h"
-
-
-class Event;
+#include "Events/Event.h"
 
 namespace JaimeEngine
 {

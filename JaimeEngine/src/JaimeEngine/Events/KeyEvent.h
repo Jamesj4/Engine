@@ -10,11 +10,15 @@ namespace JaimeEngine
 	
 		inline int GetKeyCode() const { return m_KeyCode; };
 
+		EVENT_CLASS_CATEGORY(EventCategoryInput)
+
 	protected:
 		KeyEvent(int keyCode)
 			:m_KeyCode(keyCode) {}
 
 		int m_KeyCode;
+
+		
 	};
 
 
@@ -34,6 +38,7 @@ namespace JaimeEngine
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed)
+	
 
 	protected:
 		
@@ -41,10 +46,10 @@ namespace JaimeEngine
 	};
 
 
-	class JE_API KeyReleased : public KeyEvent
+	class JE_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
-		KeyReleased(int keyCode, int repeatCount)
+		KeyReleasedEvent(int keyCode)
 			:KeyEvent(keyCode)
 		{
 		}
@@ -55,6 +60,7 @@ namespace JaimeEngine
 		}
 
 		EVENT_CLASS_TYPE(KeyReleased)
+
 
 	protected:
 

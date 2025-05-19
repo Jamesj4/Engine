@@ -37,6 +37,12 @@
     <ClInclude Include="src\JaimeEngine\Events\MouseEvent.h">
       <Filter>JaimeEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\JaimeEngine\Layer.h">
+      <Filter>JaimeEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JaimeEngine\LayerStack.h">
+      <Filter>JaimeEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\JaimeEngine\Log.h">
       <Filter>JaimeEngine</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\JaimeEngine\Application.cpp">
+      <Filter>JaimeEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JaimeEngine\Layer.cpp">
+      <Filter>JaimeEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JaimeEngine\LayerStack.cpp">
       <Filter>JaimeEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\JaimeEngine\Log.cpp">

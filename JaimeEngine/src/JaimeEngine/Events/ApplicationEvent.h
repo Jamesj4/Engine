@@ -12,6 +12,8 @@ namespace JaimeEngine
 			,m_Height(heightSize)
 		{ }
 
+
+
 		inline std::string ToString() const override 
 		{
 			return "WindowResizeEvent " + std::to_string(m_Width) + ", " + std::to_string(m_Height);
@@ -56,6 +58,8 @@ namespace JaimeEngine
 	class JE_API WindowCloseEvent : public Event
 	{
 	public:
+		WindowCloseEvent() = default;
+
 	
 		inline std::string ToString() const override
 		{
