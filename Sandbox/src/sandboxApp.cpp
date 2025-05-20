@@ -26,6 +26,7 @@ public:
 	Sandbox() 
 	{
 		PushLayer(std::make_unique<ExampleLayer>());
+		PushOverlay(std::make_unique<JaimeEngine::ImGuiLayer>());
 	}
 	~Sandbox() {}
 };

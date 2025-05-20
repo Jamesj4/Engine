@@ -4,14 +4,19 @@
 #include "Application.h"
 
 #include "Log.h"
-#include <gl/GL.h>
+#include <glad/glad.h>
 
 namespace JaimeEngine
 {
-		#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
+
+	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
 	{
+		JE_CORE_ASSERT(!s_Instance, "Application already exists")
+		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
@@ -43,12 +48,23 @@ namespace JaimeEngine
 
 	void Application::PushLayer(std::unique_ptr<Layer> layer)
 	{
-		m_LayerStack.PushLayer(std::move(layer));
+	
+		if (layer)
+		{
+			layer->OnAttach();
+			m_LayerStack.PushLayer(std::move(layer));
+		}
 	}
 
 	void Application::PushOverlay(std::unique_ptr<Layer> overlay)
 	{
-		m_LayerStack.PushOverlay(std::move(overlay));
+		if (overlay) 
+		{
+			overlay->OnAttach();
+			m_LayerStack.PushOverlay(std::move(overlay));
+		}
+		
+		
 	}
 
 	void Application::Run()

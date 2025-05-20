@@ -13,8 +13,12 @@ workspace "JaimeEngine"
 	--Include directories relative to root folder 
 	IncludeDir ={}
 	IncludeDir["GLFW"] = "JaimeEngine/vendor/GLFW/include"
+	IncludeDir["GLAD"] = "JaimeEngine/vendor/GLAD/include"
+	IncludeDir["ImGui"] = "JaimeEngine/vendor/imgui"
 
 	include "JaimeEngine/vendor/GLFW"
+	include "JaimeEngine/vendor/GLAD"
+	include "JaimeEngine/vendor/imgui"
 
 	project "JaimeEngine"
 		location "JaimeEngine"
@@ -38,12 +42,16 @@ workspace "JaimeEngine"
 		{
 			"%{prj.name}/vendor/spdlog/include",
 			"$(SolutionDir)JaimeEngine/src",
-			"%{IncludeDir.GLFW}"
+			"%{IncludeDir.GLFW}",
+			"%{IncludeDir.GLAD}",
+			"%{IncludeDir.ImGui}"
 		}
 
 		links
 		{
 			 "GLFW",
+			 "GLAD",
+			 "ImGui",
 			 "opengl32.lib"
 		}
 
@@ -58,7 +66,8 @@ workspace "JaimeEngine"
 				"JE_PLATFORM_WINDOWS",
 				"JE_BUILD_DLL",
 				"JE_CORE_ASSERT",
-				"JE_ASSERT"
+				"JE_ASSERT",
+				"GLFW_INCLUDE_NONE"
 			}
 
 			postbuildcommands
